@@ -1,0 +1,115 @@
+\section{Lecture 01: Unit 1: Differentiation}
+
+\subsection{Geometric Interpretation}
+
+Find the tangent line to \( y = f(x) \) at \( P = (x_0, y_0) \).
+
+Any line through point \( (x_0, y_0) \) has the equation
+\[
+    y - y_0 = m(x - x_0).
+\]
+The slope \( m \) at \( (x_0, y_0) \) can be written as \( f'(x_0) \).
+
+\begin{definition}
+\( f'(x_0) \), the derivative of \( f \) at \( x_0 \), is the slope of
+the tangent line to \( y = f(x) \) at \( (x_0, y_0) \).
+\end{definition}
+
+\begin{definition}
+Tangent line is equal to the limit of secant lines \( PQ \) as \( Q \to
+P \) where \( P \) is a fixed point.
+\end{definition}
+
+Let \( P = (x_0, f(x_0) \) and \( Q = (x_0 + \Delta x, f(x_0 + \Delta
+x)) \).
+
+Then the slope of secant \( PQ \) is
+\[
+    \frac{\Delta f}{\Delta x}.
+\]
+where \( \Delta f = f(x_0 + \Delta x) - f(x_0) \).
+
+The slope of the tangent line at \( P \) is
+\[
+    m = \lim_{\Delta x \to 0} \frac{\Delta f}{\Delta x}.
+\]
+The formula for the derivative of \( f(x) \) at \( P \) can now be
+written as
+\[
+    f'(x_0) = \lim_{\Delta x \to 0}
+              \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}.
+\]
+The formula on the right-hand side is called the \emph{difference
+quotient}.
+
+\begin{example}
+Find the derivative of \( f(x) = \frac{1}{x} \) at \( x = x_0 \).
+\end{example}
+\begin{solution}
+\begin{align*}
+    f'(x_0)
+        & = \lim_{\Delta x \to 0}
+            \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x} \\
+        & = \lim_{\Delta x \to 0}
+            \frac{1}{\Delta x}
+            \left( \frac{1}{x_0 + \Delta x} - \frac{1}{x_0} \right) \\
+        & = \lim_{\Delta x \to 0}
+            \frac{1}{\Delta x}
+            \left( \frac{x_0 - (x_0 + \Delta x)}
+                        {(x_0 + \Delta x)x_0} \right)
+          = \frac{-1}{x_0^2}.
+\end{align*}
+\end{solution}
+
+\begin{example}
+Find the area of the triangle enclosed by the axes and the tangent to \(
+y = \frac{1}{x} \) at point \( (x_0, y_0) \).
+\end{example}
+\begin{solution}
+The formula for the tangent is
+\[
+    (y - y_0) = f'(x_0) (x - x_0) = \frac{-1}{x_0^2} (x - x_0).
+\]
+The \( x \)-intercept of this line can be found by setting \( y = 0 \)
+in the above equation as follows:
+\begin{align*}
+    0 - y_0 = \frac{-1}{x_0^2} (x - x_0)
+        & \iff \frac{-1}{x_0} = \frac{-1}{x_0^2} (x - x_0) \\
+        & \implies x_0 = x - x_0 \\
+        & \iff x = 2x_0.
+\end{align*}
+By symmetry \( y \)-intercept of this line is \( y = 2y_0 =
+\frac{1}{x_0} \).
+
+Therefore, the area of the triangle is
+\[
+    \frac{1}{2} (2x_0) (2y_0) = 2x_0 y_0 = \frac{2x_0}{x_0} = 2.
+\]
+\end{solution}
+
+\subsection{More Notations}
+When we write \( y = f(x) \), we also use the notation \( \Delta y =
+\Delta f = f(x + x_0) - f(x) \) and all of the following notations mean
+the same thing:
+\[
+    f' = \frac{df}{dx} = \frac{dy}{dx} = \frac{d}{dx} f = \frac{d}{dx} y.
+\]
+\( f' \) is Newton's notation. The others are Leibniz's notation.
+
+\begin{example}
+Find the derivative of \( f(x) = x^n \) where \( n = 1, 2, 3, \dots \).
+\end{example}
+\begin{solution}
+\begin{align*}
+\frac{d}{dx} x^n
+    & = \lim_{\Delta x \to 0} \frac{1}{\Delta x}
+        \left( (x + \Delta x)^n - x^n \right) \\
+    & = \lim_{\Delta x \to 0} \frac{1}{\Delta x}
+        \left( x^n + nx^{n - 1} \Delta x + O(\left(\Delta x\right)^2) -
+               x^n \right) \\
+    & = \lim_{\Delta x \to 0} \frac{1}{\Delta x}
+        \left( nx^{n - 1} \Delta x + O(\left(\Delta x\right)^2) \right) \\
+    & = \lim_{\Delta x \to 0} nx^{n - 1} + O(\Delta x) \\
+    & = nx^{n - 1}.
+\end{align*}
+\end{solution}
