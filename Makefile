@@ -1,5 +1,6 @@
-PDF = susam-mitocw-1801.pdf
-DIST = $(HOME)/git/blob/lab/mitocw/1801-single-variable-calculus/$(PDF)
+NAME = 1801-single-variable-calculus
+PDF = susam-mitocw-$(NAME).pdf
+DIST = $(HOME)/git/blob/lab/mitocw/$(NAME)/$(PDF)
 
 pdf:
 	cd tex && pdflatex main && pdflatex main
