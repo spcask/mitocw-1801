@@ -1,0 +1,106 @@
+\section{Lecture 02: Limits}
+
+
+\subsection{Rate of Change}
+
+For a function \( y = f(x) \), \( \frac{\Delta y}{\Delta x} \)
+represents \emph{average change} in \( y \) over the interval \( \Delta
+x \) and \( \frac{dy}{dx} \) represents the \emph{instantaneous rate of
+change}.
+
+\begin{example}
+The variable \( q \) represents \emph{charge} and \( \frac{dq}{dt} \)
+represents \emph{current}.
+\end{example}
+
+\begin{example}
+The variable \( s \) represents \emph{distance} and \( \frac{ds}{dt} \)
+represents \emph{speed}.
+\end{example}
+
+\begin{problem}[Pumpkin drop]
+A pumpkin is dropped from a height of \( 80\,\mathrm{m} \). Find the
+average speed of the pumpkin while it falls to the ground and the
+instantaneous speed of the pumpkin when it hits the ground.
+\end{problem}
+\begin{solution}
+Let the initial height of the pumpkin be \( h_0 = 80 m \). Let the
+height of the pumpkin at time \( t \) be \( h \). Then
+\[
+    h = h_0 - \frac{1}{2}gt^2
+      = 80\,\mathrm{m} - (5\,\mathrm{m/s^2}) \cdot t^2.
+\]
+We get \( h = 0\,\mathrm{m} \) when \( t = 4\,\mathrm{s} \). Therefore,
+the average speed of the pumpkin is
+\[
+    \frac{\Delta h}{\Delta t}
+        = \frac{0 - 80}{4 - 0}\,\mathrm{m/s} = -20\,\mathrm{m/s}.
+\]
+The instantaneous speed of the pumpkin at time \( t \) is
+\[
+    \frac{d}{dt} h = -gt = (-10\,\mathrm{m/s^2}) \cdot t.
+\]
+The instantaenous speed of the pumpkin when it hits the ground can be
+found by substituting \( t = 4\,\mathrm{s} \) in the above formula:
+\[
+    -10\,\mathrm{m/s^2} \cdot 4\,\mathrm{s} = -40\,\mathrm{m/s}.
+\]
+That is \( 144\,\mathrm{km/h} \).
+\end{solution}
+
+\begin{example}
+The variable \( T \) represents \emph{temperature} and \( \frac{dT}{dx}
+\) represents temperature gradient.
+\end{example}
+
+\begin{example}[Sensitivity of measurements]
+GPS knows the point below the satellite accurately. The GPS device wants
+to compute its horizontal distance from the point below the satellite.
+Let us call this distance \( L \). It can measure its distance from the
+satellite using radio waves. Let us call this distance \( h \). \( L \)
+can be deduced from \( h \).
+
+However, we don't know \( h \) exactly. Let the error in \( h \) be \(
+\Delta h \). The error in \( L \) denoted as \( \Delta L \) is estimated
+by \( \frac{\Delta L}{\Delta h} \) which is approximately \(
+\frac{dL}{dh} \).
+\end{example}
+
+
+\subsection{Limits and Continuity}
+
+An easy limit is one in which we just need to plug in the limiting value
+into the formula, for example,
+\[
+    \lim_{x \to 4} \frac{x + 3}{x^2 + 1}
+        = \frac{4 + 3}{4^2 + 1}
+        = \frac{7}{17}.
+\]
+Derivatives are always harder than this because
+\[
+    \lim_{\Delta x \to 0} \frac{f(x_0 + \Delta x) - f(x_0)}{\Delta x}
+\]
+and plugging in \( \Delta x = 0 \) gives us \( \frac{0}{0} \) which is
+indeterminate.
+
+A right-hand limit is written as \( \lim_{x \to x_0^+} f(x) \). It means
+\( \lim_{x \to x_0} f(x) \) for \( x > x_0 \).
+
+A left-hand limit is written as \( \lim_{x \to x_0^0} f(x) \). It means
+\( \lim_{x \to x_0} f(x) \) for \( x < x_0 \).
+
+\begin{example}
+In the following function
+\[
+    f(x) =
+        \begin{cases}
+            x + 1,  & x > 0 \\
+            -x + 2, & x < 0
+        \end{cases}
+\]
+we get
+\[
+    \lim_{x \to 0^+} f(x) = \lim_{x \to 0} x + 1 = 1,
+    \lim_{x \to 0^-} f(x) = \lim_{x \to 0} -x + 2 = 2.
+\]
+\end{example}
