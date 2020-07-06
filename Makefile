@@ -3,7 +3,8 @@ PDF = susam-mitocw-$(NAME).pdf
 DIST = $(HOME)/git/blob/lab/mitocw/$(NAME)/$(PDF)
 
 pdf:
-	cd tex && pdflatex main && pdflatex main
+	cd tex && pdflatex main
+	cd tex && pdflatex main
 	mv tex/main.pdf "$(PDF)"
 	make view
 	cp "$(PDF)" $(DIST)
