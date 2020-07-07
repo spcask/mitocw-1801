@@ -10,6 +10,12 @@ pdf:
 	cp "$(PDF)" $(DIST)
 	make clean
 
+deps:
+	false # This target is not used right now.
+	rm -rf texmf texmfvar ~/Library/texlive
+	TEXMFHOME=texmf tlmgr init-usertree
+	TEXMFHOME=texmf tlmgr --usermode install siunitx
+
 view:
 	if command -v xdg-open > /dev/null; then \
 	    xdg-open "$(PDF)"; \
