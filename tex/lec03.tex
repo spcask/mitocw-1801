@@ -1,0 +1,134 @@
+\section{Lecture 03: Derivatives}
+
+
+\subsection{Derivative Formulas}
+
+There are two kinds of derivative formulas:
+\begin{itemize}
+\item
+    Specific formulas, for example, \( f'(x) \) for \( f(x) = x^n,
+    \frac{1}{x} \).
+\item
+    General formulas, for example, \( (u + v)' = u' + v' \), \( (cu)' =
+    cu' \).
+\end{itemize}
+
+
+\subsection{Trigonometric Limits}
+To show that \( \lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1 \),
+first draw a unit circle. Draw two lines from the centre of the circle
+to its circumference. Let the angle between the lines be \( \theta \).
+Then \( \sin \theta \) is the length of the perpendicular from the
+intersection of one line and the circumference to the other line and \(
+\theta \) is the length of the arc between the two lines.
+
+Principle: Short pieces of curves are nearly straight.
+
+Therefore, as \( \theta \to 0 \), the arc length merges with the
+perpendicular line and
+\[
+    \lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1.
+\]
+
+Using the above result, we can now show that \( \lim_{\theta \to 0}
+\frac{1 - \cos \theta}{\theta} = 0 \) as follows:
+\begin{align*}
+    \lim_{\theta \to 0} \frac{1 - \cos \theta}{\theta}
+        & = \lim_{\theta \to 0}
+            \frac{1 - \cos \theta}{\theta}
+            \frac{1 + \cos \theta}{1 - \cos \theta} \\
+        & = \lim_{\theta \to 0}
+            \frac{1 - \cos2 \theta}{\theta(1 + \cos \theta)} \\
+        & = \lim_{\theta \to 0}
+            \frac{\sin \theta}{\theta}
+            \frac{\sin \theta}{1 + \cos \theta} \\
+        & = 1 \cdot 0 = 0.
+\end{align*}
+
+
+\subsection{Specific Formulas}
+\begin{align*}
+    \left. \frac{d}{dx} \sin x \right\rvert_{ x = 0}
+        & = \lim_{\Delta x \to 0}
+            \frac{\sin(0 + \Delta x) - \sin 0}{\Delta x} \\
+        & = \lim_{\Delta x \to 0}
+            \frac{\sin \Delta x}{\Delta x}
+          = 1.
+\end{align*}
+\begin{align*}
+    \left. \frac{d}{dx} \cos x \right\rvert_{ x = 0}
+        & = \lim_{\Delta x \to 0}
+            \frac{\cos(0 + \Delta x) - \cos 0}{\Delta x} \\
+        & = \lim_{\Delta x \to 0}
+            \frac{\cos \Delta x - 1}{\Delta x}
+          = 0.
+\end{align*}
+
+Remark: The derivative of \( \sin x \) and \( \cos x \) at \( x = 0 \)
+give all values of \( \frac{d}{dx} \sin x \) and \( \frac{d}{dx} \cos x
+\). This can be seen in the next two derivations.
+
+\begin{align*}
+    \frac{d}{dx} \sin x
+        & = \lim_{\Delta x \to 0}
+            \frac{\sin (x + \Delta x) - \sin x}{\Delta x} \\
+        & = \lim_{\Delta x \to 0}
+            \frac{\sin x \cos \Delta x + \cos x \sin \Delta x - \sin x}
+                 {\Delta x} \\
+        & = \lim_{\Delta x \to 0}
+            \sin x \frac{\cos \Delta x - 1}{\Delta x} +
+            \lim_{\Delta x \to 0}
+            \cos x \frac{\sin \Delta x}{\Delta x} \\
+        & = \sin x \cdot 0 + \cos x \cdot 1 \\
+        & = \cos x.
+\end{align*}
+\begin{align*}
+    \frac{d}{dx} \cos x
+        & = \lim_{\Delta x \to 0}
+            \frac{\cos (x + \Delta x) - \cos x}{\Delta x} \\
+        & = \lim_{\Delta x \to 0}
+            \frac{\cos x \cos \Delta x - \sin x \sin \Delta x - \cos x}
+                 {\Delta x} \\
+        & = \lim_{\Delta x \to 0}
+            \cos x \frac{\cos \Delta x - 1}{\Delta x} +
+            \lim_{\Delta x \to 0}
+            (- \sin x) \frac{\sin \Delta x}{\Delta x} \\
+        & = \cos x \cdot 0 - \sin x \cdot 1 \\
+        & = - \sin x.
+\end{align*}
+
+
+\subsection{Geometric Proof}
+Draw a unit circle with centre at \( O \). Let \( N \), \( P \), and \(
+Q \) be points on the circumference of the circle arranged in
+anticlockwise order such that \( ON \) is horizontal. Let \( PQR \) be a
+right-angled triangle such that \( QR \) is horizontal and \( PR \) is
+vertical.
+
+Let \( y \) be the height of \( P \) above \( ON \). Let \( \Delta y =
+PR \). Let \( \angle NOP = \theta \) and \( \angle QOP = \Delta \theta
+\).
+
+We get arc length \( QP = \Delta \theta \), \( y = \sin \theta \), and
+\( \angle RPQ = \theta \).
+
+As \( \Delta \theta \to 0 \), PQ approaches a straight line and \( PR =
+PQ \cos \theta \), so we get
+\begin{align*}
+    \frac{d \sin \theta}{d \theta}
+          = \frac{dy}{d\theta}
+        & = \lim_{\Delta \theta \to 0} \frac{\Delta y}{\Delta \theta} \\
+        & = \lim_{\Delta \theta \to 0} \frac{PR}{PQ} \\
+        & = \frac{PQ \cos \theta}{PQ} \\
+        & = \cos \theta.
+\end{align*}
+\subsection{General Formulas}
+\subsubsection{Product Rule}
+\[
+    (uv)' = u'v + uv'.
+\]
+
+\subsubsection{Quotient Rule}
+\[
+    \left( \frac{u}{v} \right)' = \frac{u'v - uv'}{v^2}.
+\]

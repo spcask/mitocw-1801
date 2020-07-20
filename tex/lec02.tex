@@ -83,14 +83,14 @@ Derivatives are always harder than this because
 and plugging in \( \Delta x = 0 \) gives us \( \frac{0}{0} \) which is
 indeterminate.
 
-A right-hand limit is written as \( \lim_{x \to x_0^+} f(x) \). It means
-\( \lim_{x \to x_0} f(x) \) for \( x > x_0 \).
-
 A left-hand limit is written as \( \lim_{x \to x_0^0} f(x) \). It means
 \( \lim_{x \to x_0} f(x) \) for \( x < x_0 \).
 
+A right-hand limit is written as \( \lim_{x \to x_0^+} f(x) \). It means
+\( \lim_{x \to x_0} f(x) \) for \( x > x_0 \).
+
 \begin{example}
-In the following function
+Find the left-hand limit and right-hand limit of
 \[
     f(x) =
         \begin{cases}
@@ -98,9 +98,76 @@ In the following function
             -x + 2, & x < 0
         \end{cases}
 \]
-we get
-\[
-    \lim_{x \to 0^+} f(x) = \lim_{x \to 0} x + 1 = 1,
-    \lim_{x \to 0^-} f(x) = \lim_{x \to 0} -x + 2 = 2.
-\]
 \end{example}
+\begin{solution}
+\begin{align*}
+    \lim_{x \to 0^+} f(x) & = \lim_{x \to 0} x + 1 = 1, \\
+    \lim_{x \to 0^-} f(x) & = \lim_{x \to 0} -x + 2 = 2.
+\end{align*}
+\end{solution}
+
+\begin{definition}
+\( f \) is continuous at \( x_0 \) means \( \lim_{x \to x_0} f(x) =
+f(x_0) \), that is, \( \lim_{x \to x_0^-} f(x) = \lim_{x \to x_0^+} f(x)
+= f(x_0) \) and \( f(x_0) \) is defined.
+\end{definition}
+
+
+\subsubsection{Jump Discontinuity}
+
+A function \( f(x) \) is said to have a jump discontinuity at \( x_0 \)
+when \( \lim_{x \to x_0^-} f(x) \) and \( \lim_{x \to x_0^-} f(x) \)
+exist but they are not equal.
+
+
+\subsubsection{Removable Discontinuity}
+
+A function \( f(x) \) is said to have a jump discontinuity at \( x_0 \)
+when \( \lim_{x \to x_0^-} f(x) \) and \( \lim_{x \to x_0^+} f(x) \)
+exist and they are equal, but they are not equal to \( f(x_0) \).
+
+For example, \( g(x) = \frac{\sin x}{x} \) and \( h(x) = \frac{1 - \cos
+x}{x} \) have removable discontinuities at \( x = 0 \).
+
+
+\subsubsection{Infinite Discontinuity}
+
+A function \( f(x) \) has infinite discontinuity at \( x_0 \) if either or both
+of \( \lim_{x \to x_0^-} f(x) \) and \( \lim_{x \to x_0^-} f(x) \) are
+undefined.
+
+For example, \( y = \frac{1}{x} \) has infinite discontinuity at \( x =
+0 \) because \( \lim_{x \to 0^-} = -\infty \) and \( \lim_{x \to 0^+} =
+\infty \).
+
+Note that \( y = \frac{1}{x} \) is an odd function and its derivative \(
+\frac{dy}{dx} = \frac{-1}{x^2} \) is an even function.
+
+In general, a derivative of an odd function is an even function.
+
+
+\subsubsection{Other (Ugly) Discontinuities}
+
+The function \( y = \sin \frac{1}{x} \) has an ugly discontinuity at \(
+x = 0 \). It oscillates infinitely often as \( x \to 0 \). There is no
+left-hand limit or right-hand limit in this case.
+
+
+\subsection{Differentiable Implies Continuous}
+\begin{theorem}
+If \( f \) is differentiable at \( x_0 \), then \( f \) is continuous at
+\( x_0 \).
+\end{theorem}
+\begin{proof}
+If \( f \) is differentiable at \( x_0 \),
+\( f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \) exists.
+Therefore,
+\begin{align*}
+    \lim_{x \to x_0} f(x) - f(x_0)
+        & = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} (x - x_0) \\
+        & = f'(x_0) \cdot 0 = 0.
+\end{align*}
+We have shown that \( \lim_{x \to x_0} f(x) - f(x_0) = 0 \). This
+implies that \( \lim_{x \to x_0} f(x) = f(x_0) \), that is, \( f(x) \)
+is continuous at \( x_0 \).
+\end{proof}

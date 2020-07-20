@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+
+% Set paper size.
+\usepackage[a5paper]{geometry}
+
+% Use links in table of contents.
+\usepackage[colorlinks=true,linkcolor=magenta,urlcolor=blue]{hyperref}
+
+% Add vertical space between paragraphs.
+\usepackage{parskip}
+
+% Math symbols.
+\usepackage{amsmath}
+
+% Theorem environments.
+\usepackage{amsthm}
+
+% To include CC-BY license logo.
+\usepackage{graphicx}
+
+% Do not use monospace font for URLs.
+\urlstyle{same}
+
+% Title, author, and date.
+\title{Susam's Notes on MIT OCW 18.01}
+\author{Susam Pal}
+\newcommand{\simpledate}{%
+    \the\day{}
+    \ifcase\month \or Jan \or Feb \or Mar \or Apr \or May \or Jun
+                  \or Jul \or Aug \or Sep \or Oct \or Nov \or Dec \fi
+    \the\year{}%
+}
+\newcommand{\updatedate}{\simpledate}
+\date{
+    \small Last updated on \updatedate
+}
+
+% Custom theorem environments.
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{problem}{Problem}[section]
+\newenvironment{solution}[1][Solution]
+    {\begin{proof}[#1]\renewcommand{\qedsymbol}{}}
+    {\end{proof}}
+
+\begin{document}
